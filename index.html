@@ -160,6 +160,457 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-熟记30个CSS选择器-下" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/02/%E7%86%9F%E8%AE%B030%E4%B8%AACSS%E9%80%89%E6%8B%A9%E5%99%A8-%E4%B8%8B/">熟记30个CSS选择器(下)</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/02/%E7%86%9F%E8%AE%B030%E4%B8%AACSS%E9%80%89%E6%8B%A9%E5%99%A8-%E4%B8%8B/" class="archive-article-date">
+  	<time datetime="2019-12-02T05:50:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>21、 X::pseudoElement 伪元素选择器<br>我们可以使用伪元素（用::表示）来定义某些片段元素，比如第一行或第一个字母。要记住的是这只能用于块状（block）元素。</p>
+<p>比如我们要匹配第一个字母：</p>
+<p>p::first-letter {<br> float: left;<br> font-size: 2em;<br> font-weight: bold;<br> font-family: cursive;<br> padding-right: 2px;<br>}<br>上述代码会匹配所有的P标签，然后匹配所有段落开头的第一个字母。一般用于比较个性的类似杂志排版风格的网站。</p>
+<p>比如我们要匹配段落的第一行内容：</p>
+<p>p::first-line {<br> font-weight: bold;<br> font-size: 1.2em;<br>}<br>这里使用::first-line来定义段落的第一行的样式。</p>
+<p>为了兼容现有的样式标准，CSS1和CSS2里使用单冒号来表示伪元素（比如:first-line，:first-letter，:before和:after）</p>
+<p>浏览器兼容性</p>
+<p>IE6+</p>
+<p>Firefox</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>Opera</p>
+<p>22、 X:nth-child(n) ：选择每第 n 个元素选择器<br>如果你要匹配一组序列元素每第几个元素，你可以使用 :nth-child 选择器满足这个需求，要注意的是nth-child指序列里的第n个元素，从1开始。如果你要匹配第二个元素，可以使用li:nth-child(2)。我们甚至可以用按倍数进行匹配，比如选择所有4的倍数元素，li:nth-child(4n)。我们常用这个做奇偶交替的样式，但是更常用的是这两个特殊的关键词字：even(偶数) 后 odd (奇数)</p>
+<p>常用写法示例：</p>
+<p>li:nth-child(3) {<br> color: red;<br>}<br>奇数样式匹配：</p>
+<p>li:nth-child(odd) {<br> background: red;<br>}<br>浏览器兼容性</p>
+<p>IE9+</p>
+<p>Firefox 3.5+</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>23、 X:nth-last-child(n) ：从后往前计算选择每第 n 个元素选择器<br>X:nth-last-child(n) 与 X:nth-child(n) 相反，这里从后往前数，比如你的元素很多，你不会一个一个从前往后数吧，li:nth-child(397)，使用 nth-last-child 这个伪类更会方便些</p>
+<p>代码示例：</p>
+<p>li:nth-last-child(2) {<br>   color: red;<br>}<br>浏览器兼容性</p>
+<p>IE9+</p>
+<p>Firefox 3.5+</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>Opera</p>
+<ol start="24">
+<li>X:nth-of-type(n)：选择每第n个某种元素选择器<br>有时候你可能有这样的需求，想通过元素类型type进行选择，而不是子元素 child，你可以考虑 X:nth-of-type(n)，假设有5个无序列表。如果你想定义第三个ul的样式，但又没有id来进行匹配，那么可以使用伪类nth-of-type(n)。你的代码可以这么写：</li>
+</ol>
+<p>ul:nth-of-type(3) {<br> border: 1px solid black;<br>}<br>浏览器兼容性</p>
+<p>IE9+</p>
+<p>Firefox 3.5+</p>
+<p>Chrome</p>
+<p>Safari</p>
+<ol start="25">
+<li>X:nth-last-of-type(n)：从后往前计算选择每第n个某种元素选择器<br>比如我们可以使用nth-last-of-type来选择倒数第n个元素。如下段代码所示：</li>
+</ol>
+<p>ul:nth-last-of-type(3) {<br> border: 1px solid black;<br>}<br>浏览器兼容性</p>
+<p>IE9+</p>
+<p>Firefox 3.5+</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>Opera</p>
+<ol start="26">
+<li>X:first-child：第一个子元素选择器<br>这个选择器通常选择第一个子元素，我们常常为第一个或者最后选项卡设置默认的视觉效果，比如去掉元素的边框，示例代码如下：</li>
+</ol>
+<p>ul &gt;li:first-child {<br> border-top: none;<br>}<br>假设你有一个序列，每一行的元素都有上边框border-top和下边框border-bottom。这样的话第一个和最后一个元素并不需要这么设置区分分割线。我们会通过给第一个和最后一个元素添加样式来解决。稍后我会给到示例。</p>
+<p>浏览器兼容性</p>
+<p>IE7+</p>
+<p>Firefox</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>Opera</p>
+<ol start="27">
+<li>X:last-child：最后一个子元素选择器<br>有第一个子元素选择器，自然会有最后一个子元素选择器，示例代码如下：</li>
+</ol>
+<p>ul &gt; li:last-child {<br> color: green;<br>}<br>比如下面一个例子，我们创建一个无序列表的样式，需要加上边框的深度，让层次更明显（分割线），又不想让第一个元素上边框和最后一个元素下边框有线条的感觉，这两个伪类就派上用场了，示例代码如下：</p>
+<style>
+ul {
+ width: 200px;
+ background: #292929;
+ color: white;
+ list-style: none;
+ padding-left: 0;
+}
+
+li {
+ padding: 10px;
+ border-bottom: 1px solid black;
+ border-top: 1px solid #3c3c3c;
+}
+
+li:first-child {
+  border-top: none;
+}
+
+li:last-child {
+ border-bottom: none;
+}
+</style>
+
+<ul>
+<li> List Item </li>
+<li> List Item </li>
+<li> List Item </li>
+</ul>
+效果如下：
+
+
+
+<p>浏览器兼容性</p>
+<p>IE9+</p>
+<p>Firefox</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>Opera</p>
+<p>28：X:only-child ：选择唯一的子元素<br>这个伪类一般不常用，only-child可以让你匹配唯一的子元素，比如，选择当div中只有一个p子元素的时候段落字体才是红色的，只要子元素超过一个就不会应用样式。示例代码如下：</p>
+<style>
+div p:only-child {
+ color: red;
+}
+</style>
+
+<div><p> My paragraph here. </p></div> 
+/*只有这行应用样式*/
+
+<div>
+<p> Two paragraphs total. </p>
+<p> Two paragraphs total. </p>
+</div>
+浏览器兼容性
+
+<p>IE9+</p>
+<p>Firefox</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>Opera</p>
+<p>29：X:only-of-type：匹配父元素里没有邻近兄弟元素的选择器<br>only-of-type会匹配父元素里没有邻近兄弟元素的子元素（即同胞中唯一的那种元素，没有兄弟）。例如，匹配所有只有一个列表元素的 li 和 div里只有一个p标签 让其应用样式，示例代码如下</p>
+<style>
+      div p:only-of-type {
+         color: red;
+}
+
+      li:only-of-type {
+         font-weight: bold;
+}
+</style>
+
+<div>
+<p> My paragraph here. </p>
+<ul>
+<li> List Item </li>
+<li> List Item </li>
+</ul>
+</div>
+
+<div>
+<p> Two paragraphs total. </p>
+<p> Two paragraphs total. </p>
+<ul>
+<li> List Item </li>
+</ul>
+</div>
+示例效果如下：
+
+
+
+<p>浏览器兼容性</p>
+<p>IE9+</p>
+<p>Firefox 3.5+</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>Opera</p>
+<p>30：X:first-of-type：选择该类型的第一个元素选择器<br>我们通常用这个选择器来选择该类型的第一个元素，为了更好的理解这个例子，我们来看如下结构的HTML代码：</p>
+<div>
+<p> My paragraph here. </p>
+<ul>
+<li> List Item 1 </li>
+<li> List Item 2 </li>
+</ul>
+
+<ul>
+<li> List Item 3 </li>
+<li> List Item 4 </li>
+</ul>   
+</div>
+比如我们有一个这样的需求? 怎么选中"List Item 2"。先别着急往下看？你会如何做呢？
+
+<p>实现的方法比较多，如下所示：</p>
+<p>方案1</p>
+<p>ul:first-of-type &gt; li:nth-child(2) {<br> font-weight: bold;<br>}<br>上述代码，首先找到页面中的第一个无序列表，然后找到它的直接子元素，然后选择第二个元素。</p>
+<p>方案2 ：</p>
+<p>使用紧邻同胞选择器</p>
+<p>p + ul li:last-child {<br> font-weight: bold;<br>}<br>上述代码先找到紧跟在p后面的ul，然后找到li序列的最后的元素。</p>
+<p>方案3：</p>
+<p>多种选择器的组合，示例代码如下：</p>
+<p>ul:first-of-type li:nth-last-child(1) {<br> font-weight: bold;<br>}<br>上述我们先找到页面的第一个ul，然后找到li序列的倒数第一个元素。</p>
+<p>浏览器兼容性</p>
+<p>IE9+</p>
+<p>Firefox 3.5+</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>Opera</p>
+<p>小节<br>到这里，我们终于学完了常用的30个CSS选择器，是不是轻松许多，感谢大家的阅读，熟记这30个选择最好的办法就是经常的使用，在实际中去理解和运用，印象才能深刻。<br>————————————————</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">html、CSS、网页设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/02/%E7%86%9F%E8%AE%B030%E4%B8%AACSS%E9%80%89%E6%8B%A9%E5%99%A8-%E4%B8%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-熟记30个CSS选择器-上" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/02/%E7%86%9F%E8%AE%B030%E4%B8%AACSS%E9%80%89%E6%8B%A9%E5%99%A8-%E4%B8%8A/">熟记30个CSS选择器(上)</a>
+    </h1>
+  
+
+        
+        <a href="/2019/12/02/%E7%86%9F%E8%AE%B030%E4%B8%AACSS%E9%80%89%E6%8B%A9%E5%99%A8-%E4%B8%8A/" class="archive-article-date">
+  	<time datetime="2019-12-02T05:49:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>CSS的魅力就是让我们前端工程师像设计师一样进行网页的设计，我们能轻而易举的改变颜色、布局、制作出漂亮的影音效果等等，我们只需要改几行代码，不需要借助任何软件，就能轻而易举的实现，感觉就像魔法师一般，几秒钟就能得到一个想要的效果，是不是很酷呢。</p>
+<p>CSS为我们提供了选择器，这个酷酷的魔法工具，让我们随意能够操作网页元素的样式，CSS选择器众多，我们不可能一次性学完，但是这30个CSS选择器我们必须熟练记忆，可能有的同学觉得没必要学这么多，掌握了id、class、后代选择器就够了，这算完事了吗？如果是这样你就错过了很多灵活运用CSS的机会，虽然这些新属性很多都属于CSS3，但是我们掌握这些新属性后还是有很大的好处的。</p>
+<p>从本篇文章起，我给大家归纳了常用的30个CSS选择器，希望通过我的总结，你能够喜欢上这些常用的选择器，废话不多说，我们这篇文章将介绍前10个。</p>
+<p>在介绍之前，我们先理解下文档结构树的父子关系<br>在学习CSS选择器之前，我们需要弄清楚文档结构的父子关系，什么是父元素、子元素以及祖辈元素和后代元素这些概念，清楚了这些逻辑关系后，你才能更好的掌握CSS选择器。如下图所示，我们用树形结构来表示一个文档结构。</p>
+<p>如上图所示，相邻的两个节点（层级是连续的），他们之间是父子关系。如果两个元素之间跨越两个层级以上，它们是祖辈和后代的关系。</p>
+<p>1、*：通用选择器<br>针对初学者来说，我们还是从简单的开始学起，首先我们来认识下通用选择器，然后再逐步深入学习其它高级的选择器，加入我们想让文档中的每个元素都显示成红色，我们可以这么做：</p>
+<ul>
+<li><p>{color:red;}<br>通用选择器，可以匹配页面所有的元素。 许多开发者可能会用这个技巧如下代码所示让元素居中，在开发测试阶段固然是好的，但是我不建议这么做，因为这样做会给浏览器增加很大的负担。</p>
+</li>
+<li><p>{<br>margin: 0;<br> padding: 0;<br>}<br>浏览器兼容性：</p>
+</li>
+</ul>
+<p>IE6+</p>
+<p>Firefox</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>Opera</p>
+<p>2、#X：ID选择器<br>ID选择器的开头使用#号，但是你在使用的时候，需要谨慎。</p>
+<p>问问自己：是否真的需要使用ID选择器来定义样式</p>
+<p>id选择器比较局限，不能重用。因此需要慎重考虑。</p>
+<p>#container {<br> width: 960px;<br> margin: auto;<br>}<br>浏览器兼容性：</p>
+<p>IE6+</p>
+<p>Firefox</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>Opera</p>
+<p>3、.X：类选择器<br>类选择器的开头用.（点）进行表示。与ID选择器的区别就是可以重用。定义多个元素的样式，好比按组进行归类，同一类的样式统一定义。</p>
+<p>.error {<br>color: red;<br>}<br>如果把两个类串在一起，选择的就是同时具有两个类名的元素，类名的顺序则无所谓，比如 class=”urgent warning” , css 选择器你也可以这样写 .warning .urgent。</p>
+<p>浏览器兼容性：</p>
+<p>IE6+</p>
+<p>Firefox</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>Opera</p>
+<p>4、X Y：后代选择器<br>后代选择器，英文名称：descendant selector，本文的开头我们学习了什么是后代元素，比如我们要选择在li元素中包含a标签的链接（不是所有的链接），取消下划线的默认样式，我们可以这样代码实现：</p>
+<p>li a {<br>text-decoration: none;<br>}<br>经验分享: 如果你的选择器看起来像X Y Z A B.error这样就错了。问问自己是否真的需要加入这么多负荷, 这样写的可读性也太差了。还有一个需要注意的，后代元素的层级问题，可能会很深。</p>
+<p>浏览器兼容性：</p>
+<p>IE6+</p>
+<p>Firefox</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>Opera</p>
+<p>5、X：元素选择器<br>假如你想针对Html预定义的标签，比如类似：p,h3,em,a这些标签，我们可以快速为某类标签定义样式。如下段代码所示：</p>
+<p>a { color: red; }<br>ul { margin-left: 0; }<br>浏览器兼容性：</p>
+<p>IE6+</p>
+<p>Firefox</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>Opera</p>
+<p>6、X:visited and X:link ：链接伪类选择器<br>:link 伪类来定义所有还没有点击链接的样式，:visited 伪类定义我们曾经点击过或者访问过的链接样式，示例代码如下：</p>
+<p>a:link { color: red; }<br>a:visted { color: purple; }<br>浏览器兼容性：</p>
+<p>IE7+</p>
+<p>Firefox</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>Opera</p>
+<p>7、 X + Y：紧邻同胞选择器<br>若想选择同一个父元素中，相邻的同级别的元素，我们可以使用紧邻同胞选择器（adjacent selector）。如若想把紧跟在h1元素的段落上外边距去掉，你可以这么写：</p>
+<p>h1 + p { margin-top:0 }</p>
+<p>浏览器兼容性：</p>
+<p>IE7+</p>
+<p>Firefox</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>Opera</p>
+<p>8、 X &gt; Y：子元素选择器<br>有时候我们并想选择所有的后代元素，而是想缩小范围，只选择一个元素的子元素，比如我们只想选择 #container&gt;ul 定义id为container的div里的ul元素，而不是曾经更深的后代元素比如li里的ul。</p>
+<p>html文档结构：</p>
+<div id="container">
+<ul>
+<li> List Item
+<ul>
+<li> Child </li>
+</ul>
+</li>
+<li> List Item </li>
+<li> List Item </li>
+<li> List Item </li>
+</ul>
+</div>
+
+<p>css代码如下:</p>
+<p>div#container &gt; ul {<br>border: 1px solid black;<br>}<br>文档选择树形结构：</p>
+<p>代码效果：</p>
+<p>浏览器兼容性：</p>
+<p>IE7+</p>
+<p>Firefox</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>Opera</p>
+<p>9、 X ~ Y：后续同胞选择器<br>后续同胞选择器使用 ~ 表示，选择一个元素后面同属一个父元素的另一个元素。这个选择器和 X + Y 很像，但没那么严格。后续同胞选择器应用会更广泛。比如下面这个例子，我们选择所有ul后面的P元素。</p>
+<p>html文档结构：</p>
+   <div id="container">
+<ul>
+<li> List Item
+<ul>
+<li> Child </li>
+</ul>
+</li>
+<li> List Item </li>
+<li> List Item </li>
+<li> List Item </li>
+</ul>
+
+
+<p> Lorem ipsum dolor sit amet, <a href="#" title="Some title">consectetur</a> adipisicing elit, sed do eiusmod tempor. </p>
+<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+<p> Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod tempor. </p>
+<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+
+</div>
+css代码如下:
+
+<p>ul ~ p {<br> color: red;<br>}<br>文档选择树形结构：</p>
+<p>代码效果：</p>
+<p>浏览器兼容性：</p>
+<p>IE7+ Firefox Chrome Safari Opera</p>
+<p>10、 X[title]：简单属性选择器<br>如果想选择具有某个属性的元素，而不管属性的值是什么，我们可以使用简单属性选择器。例如想让带有title属性的链接标签才会被匹配，没有title属性的标签不会受到影响。你可以这么写代码：</p>
+<p>a[title] {<br> color: green;<br>}<br>浏览器兼容性：</p>
+<p>IE7+ Firefox Chrome Safari Opera</p>
+<p>小节<br>今天的内容就和大家分享到这里，CSS选择器是CSS的基础和重要内容，虽然简单，但是灵活掌握可不容易，接下来的文章，我将和大家继续分享CSS选择器的剩余内容。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">html、CSS、网页设计</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/12/02/%E7%86%9F%E8%AE%B030%E4%B8%AACSS%E9%80%89%E6%8B%A9%E5%99%A8-%E4%B8%8A/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-个人日记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -625,6 +1076,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">作者：Aime-toi | 发布：2019.12.2 | 浏览：3890</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">html、CSS、网页设计</a>
               </li>
             
             <div class="clearfix"></div>

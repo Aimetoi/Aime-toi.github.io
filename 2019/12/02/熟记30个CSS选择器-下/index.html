@@ -6,16 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | Aime-toi技术博客</title>
+  <title>熟记30个CSS选择器(下) | Aime-toi技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人技术博客">
-<meta name="keywords" content="前端博客，后端博客，C，C++，Java，Python">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Aime-toi技术博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2019&#x2F;index.html">
+  <meta name="description" content="21、 X::pseudoElement 伪元素选择器我们可以使用伪元素（用::表示）来定义某些片段元素，比如第一行或第一个字母。要记住的是这只能用于块状（block）元素。 比如我们要匹配第一个字母： p::first-letter { float: left; font-size: 2em; font-weight: bold; font-family: cursive; padding-ri">
+<meta name="keywords" content="html、CSS、网页设计">
+<meta property="og:type" content="article">
+<meta property="og:title" content="熟记30个CSS选择器(下)">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;02&#x2F;%E7%86%9F%E8%AE%B030%E4%B8%AACSS%E9%80%89%E6%8B%A9%E5%99%A8-%E4%B8%8B&#x2F;index.html">
 <meta property="og:site_name" content="Aime-toi技术博客">
-<meta property="og:description" content="个人技术博客">
+<meta property="og:description" content="21、 X::pseudoElement 伪元素选择器我们可以使用伪元素（用::表示）来定义某些片段元素，比如第一行或第一个字母。要记住的是这只能用于块状（block）元素。 比如我们要匹配第一个字母： p::first-letter { float: left; font-size: 2em; font-weight: bold; font-family: cursive; padding-ri">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-12-02T06:00:11.403Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Aime-toi技术博客" type="application/atom+xml">
@@ -158,36 +159,241 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-熟记30个CSS选择器-下" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      熟记30个CSS选择器(下)
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/02/%E7%86%9F%E8%AE%B030%E4%B8%AACSS%E9%80%89%E6%8B%A9%E5%99%A8-%E4%B8%8B/" class="archive-article-date">
+
+        
+        <a href="/2019/12/02/%E7%86%9F%E8%AE%B030%E4%B8%AACSS%E9%80%89%E6%8B%A9%E5%99%A8-%E4%B8%8B/" class="archive-article-date">
   	<time datetime="2019-12-02T05:50:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-02</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/02/%E7%86%9F%E8%AE%B030%E4%B8%AACSS%E9%80%89%E6%8B%A9%E5%99%A8-%E4%B8%8B/">熟记30个CSS选择器(下)</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>21、 X::pseudoElement 伪元素选择器<br>我们可以使用伪元素（用::表示）来定义某些片段元素，比如第一行或第一个字母。要记住的是这只能用于块状（block）元素。</p>
+<p>比如我们要匹配第一个字母：</p>
+<p>p::first-letter {<br> float: left;<br> font-size: 2em;<br> font-weight: bold;<br> font-family: cursive;<br> padding-right: 2px;<br>}<br>上述代码会匹配所有的P标签，然后匹配所有段落开头的第一个字母。一般用于比较个性的类似杂志排版风格的网站。</p>
+<p>比如我们要匹配段落的第一行内容：</p>
+<p>p::first-line {<br> font-weight: bold;<br> font-size: 1.2em;<br>}<br>这里使用::first-line来定义段落的第一行的样式。</p>
+<p>为了兼容现有的样式标准，CSS1和CSS2里使用单冒号来表示伪元素（比如:first-line，:first-letter，:before和:after）</p>
+<p>浏览器兼容性</p>
+<p>IE6+</p>
+<p>Firefox</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>Opera</p>
+<p>22、 X:nth-child(n) ：选择每第 n 个元素选择器<br>如果你要匹配一组序列元素每第几个元素，你可以使用 :nth-child 选择器满足这个需求，要注意的是nth-child指序列里的第n个元素，从1开始。如果你要匹配第二个元素，可以使用li:nth-child(2)。我们甚至可以用按倍数进行匹配，比如选择所有4的倍数元素，li:nth-child(4n)。我们常用这个做奇偶交替的样式，但是更常用的是这两个特殊的关键词字：even(偶数) 后 odd (奇数)</p>
+<p>常用写法示例：</p>
+<p>li:nth-child(3) {<br> color: red;<br>}<br>奇数样式匹配：</p>
+<p>li:nth-child(odd) {<br> background: red;<br>}<br>浏览器兼容性</p>
+<p>IE9+</p>
+<p>Firefox 3.5+</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>23、 X:nth-last-child(n) ：从后往前计算选择每第 n 个元素选择器<br>X:nth-last-child(n) 与 X:nth-child(n) 相反，这里从后往前数，比如你的元素很多，你不会一个一个从前往后数吧，li:nth-child(397)，使用 nth-last-child 这个伪类更会方便些</p>
+<p>代码示例：</p>
+<p>li:nth-last-child(2) {<br>   color: red;<br>}<br>浏览器兼容性</p>
+<p>IE9+</p>
+<p>Firefox 3.5+</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>Opera</p>
+<ol start="24">
+<li>X:nth-of-type(n)：选择每第n个某种元素选择器<br>有时候你可能有这样的需求，想通过元素类型type进行选择，而不是子元素 child，你可以考虑 X:nth-of-type(n)，假设有5个无序列表。如果你想定义第三个ul的样式，但又没有id来进行匹配，那么可以使用伪类nth-of-type(n)。你的代码可以这么写：</li>
+</ol>
+<p>ul:nth-of-type(3) {<br> border: 1px solid black;<br>}<br>浏览器兼容性</p>
+<p>IE9+</p>
+<p>Firefox 3.5+</p>
+<p>Chrome</p>
+<p>Safari</p>
+<ol start="25">
+<li>X:nth-last-of-type(n)：从后往前计算选择每第n个某种元素选择器<br>比如我们可以使用nth-last-of-type来选择倒数第n个元素。如下段代码所示：</li>
+</ol>
+<p>ul:nth-last-of-type(3) {<br> border: 1px solid black;<br>}<br>浏览器兼容性</p>
+<p>IE9+</p>
+<p>Firefox 3.5+</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>Opera</p>
+<ol start="26">
+<li>X:first-child：第一个子元素选择器<br>这个选择器通常选择第一个子元素，我们常常为第一个或者最后选项卡设置默认的视觉效果，比如去掉元素的边框，示例代码如下：</li>
+</ol>
+<p>ul &gt;li:first-child {<br> border-top: none;<br>}<br>假设你有一个序列，每一行的元素都有上边框border-top和下边框border-bottom。这样的话第一个和最后一个元素并不需要这么设置区分分割线。我们会通过给第一个和最后一个元素添加样式来解决。稍后我会给到示例。</p>
+<p>浏览器兼容性</p>
+<p>IE7+</p>
+<p>Firefox</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>Opera</p>
+<ol start="27">
+<li>X:last-child：最后一个子元素选择器<br>有第一个子元素选择器，自然会有最后一个子元素选择器，示例代码如下：</li>
+</ol>
+<p>ul &gt; li:last-child {<br> color: green;<br>}<br>比如下面一个例子，我们创建一个无序列表的样式，需要加上边框的深度，让层次更明显（分割线），又不想让第一个元素上边框和最后一个元素下边框有线条的感觉，这两个伪类就派上用场了，示例代码如下：</p>
+<style>
+ul {
+ width: 200px;
+ background: #292929;
+ color: white;
+ list-style: none;
+ padding-left: 0;
+}
 
-        <div class="article-info info-on-right">
-          
+li {
+ padding: 10px;
+ border-bottom: 1px solid black;
+ border-top: 1px solid #3c3c3c;
+}
+
+li:first-child {
+  border-top: none;
+}
+
+li:last-child {
+ border-bottom: none;
+}
+</style>
+
+<ul>
+<li> List Item </li>
+<li> List Item </li>
+<li> List Item </li>
+</ul>
+效果如下：
+
+
+
+<p>浏览器兼容性</p>
+<p>IE9+</p>
+<p>Firefox</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>Opera</p>
+<p>28：X:only-child ：选择唯一的子元素<br>这个伪类一般不常用，only-child可以让你匹配唯一的子元素，比如，选择当div中只有一个p子元素的时候段落字体才是红色的，只要子元素超过一个就不会应用样式。示例代码如下：</p>
+<style>
+div p:only-child {
+ color: red;
+}
+</style>
+
+<div><p> My paragraph here. </p></div> 
+/*只有这行应用样式*/
+
+<div>
+<p> Two paragraphs total. </p>
+<p> Two paragraphs total. </p>
+</div>
+浏览器兼容性
+
+<p>IE9+</p>
+<p>Firefox</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>Opera</p>
+<p>29：X:only-of-type：匹配父元素里没有邻近兄弟元素的选择器<br>only-of-type会匹配父元素里没有邻近兄弟元素的子元素（即同胞中唯一的那种元素，没有兄弟）。例如，匹配所有只有一个列表元素的 li 和 div里只有一个p标签 让其应用样式，示例代码如下</p>
+<style>
+      div p:only-of-type {
+         color: red;
+}
+
+      li:only-of-type {
+         font-weight: bold;
+}
+</style>
+
+<div>
+<p> My paragraph here. </p>
+<ul>
+<li> List Item </li>
+<li> List Item </li>
+</ul>
+</div>
+
+<div>
+<p> Two paragraphs total. </p>
+<p> Two paragraphs total. </p>
+<ul>
+<li> List Item </li>
+</ul>
+</div>
+示例效果如下：
+
+
+
+<p>浏览器兼容性</p>
+<p>IE9+</p>
+<p>Firefox 3.5+</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>Opera</p>
+<p>30：X:first-of-type：选择该类型的第一个元素选择器<br>我们通常用这个选择器来选择该类型的第一个元素，为了更好的理解这个例子，我们来看如下结构的HTML代码：</p>
+<div>
+<p> My paragraph here. </p>
+<ul>
+<li> List Item 1 </li>
+<li> List Item 2 </li>
+</ul>
+
+<ul>
+<li> List Item 3 </li>
+<li> List Item 4 </li>
+</ul>   
+</div>
+比如我们有一个这样的需求? 怎么选中"List Item 2"。先别着急往下看？你会如何做呢？
+
+<p>实现的方法比较多，如下所示：</p>
+<p>方案1</p>
+<p>ul:first-of-type &gt; li:nth-child(2) {<br> font-weight: bold;<br>}<br>上述代码，首先找到页面中的第一个无序列表，然后找到它的直接子元素，然后选择第二个元素。</p>
+<p>方案2 ：</p>
+<p>使用紧邻同胞选择器</p>
+<p>p + ul li:last-child {<br> font-weight: bold;<br>}<br>上述代码先找到紧跟在p后面的ul，然后找到li序列的最后的元素。</p>
+<p>方案3：</p>
+<p>多种选择器的组合，示例代码如下：</p>
+<p>ul:first-of-type li:nth-last-child(1) {<br> font-weight: bold;<br>}<br>上述我们先找到页面的第一个ul，然后找到li序列的倒数第一个元素。</p>
+<p>浏览器兼容性</p>
+<p>IE9+</p>
+<p>Firefox 3.5+</p>
+<p>Chrome</p>
+<p>Safari</p>
+<p>Opera</p>
+<p>小节<br>到这里，我们终于学完了常用的30个CSS选择器，是不是轻松许多，感谢大家的阅读，熟记这30个选择最好的办法就是经常的使用，在实际中去理解和运用，印象才能深刻。<br>————————————————</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -199,225 +405,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/12/02/%E7%86%9F%E8%AE%B030%E4%B8%AACSS%E9%80%89%E6%8B%A9%E5%99%A8-%E4%B8%8B/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/02/%E7%86%9F%E8%AE%B030%E4%B8%AACSS%E9%80%89%E6%8B%A9%E5%99%A8-%E4%B8%8A/" class="archive-article-date">
-  	<time datetime="2019-12-02T05:49:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-02</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/02/%E7%86%9F%E8%AE%B030%E4%B8%AACSS%E9%80%89%E6%8B%A9%E5%99%A8-%E4%B8%8A/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">熟记30个CSS选择器(上)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/02/%E7%86%9F%E8%AE%B030%E4%B8%AACSS%E9%80%89%E6%8B%A9%E5%99%A8-%E4%B8%8A/">熟记30个CSS选择器(上)</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">html、CSS、网页设计</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/02/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2019-12-02T01:19:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/02/%E4%B8%AA%E4%BA%BA%E6%97%A5%E8%AE%B0/">个人日记</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">作者：Aime-toi | 发布：2019.12.2 | 浏览：38909</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/02/%E7%95%99%E8%A8%80%E6%9D%BF/" class="archive-article-date">
-  	<time datetime="2019-12-02T00:56:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/02/%E7%95%99%E8%A8%80%E6%9D%BF/">留言板</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/02/%E8%81%94%E7%B3%BB%E6%88%91/" class="archive-article-date">
-  	<time datetime="2019-12-02T00:56:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/02/%E8%81%94%E7%B3%BB%E6%88%91/">联系我</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">作者：Aime-toi | 发布：2019.12.2 | 浏览：3890</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/02/%E5%85%B3%E4%BA%8E%E6%88%91/" class="archive-article-date">
-  	<time datetime="2019-12-02T00:56:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/02/%E5%85%B3%E4%BA%8E%E6%88%91/">关于我</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color2">作者：Aime-toi | 发布：2019.12.2 | 浏览：3890</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/11/12/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" class="archive-article-date">
-  	<time datetime="2019-11-12T07:52:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/12/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">C语言学生信息管理系统</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -440,8 +527,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
