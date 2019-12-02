@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Aime-toi技术博客">
 <meta property="og:description" content="21、 X::pseudoElement 伪元素选择器我们可以使用伪元素（用::表示）来定义某些片段元素，比如第一行或第一个字母。要记住的是这只能用于块状（block）元素。 比如我们要匹配第一个字母： p::first-letter { float: left; font-size: 2em; font-weight: bold; font-family: cursive; padding-ri">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-12-02T06:00:11.403Z">
+<meta property="og:updated_time" content="2019-12-02T06:13:21.360Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Aime-toi技术博客" type="application/atom+xml">
@@ -237,40 +237,7 @@
 <ol start="27">
 <li>X:last-child：最后一个子元素选择器<br>有第一个子元素选择器，自然会有最后一个子元素选择器，示例代码如下：</li>
 </ol>
-<p>ul &gt; li:last-child {<br> color: green;<br>}<br>比如下面一个例子，我们创建一个无序列表的样式，需要加上边框的深度，让层次更明显（分割线），又不想让第一个元素上边框和最后一个元素下边框有线条的感觉，这两个伪类就派上用场了，示例代码如下：</p>
-<style>
-ul {
- width: 200px;
- background: #292929;
- color: white;
- list-style: none;
- padding-left: 0;
-}
-
-li {
- padding: 10px;
- border-bottom: 1px solid black;
- border-top: 1px solid #3c3c3c;
-}
-
-li:first-child {
-  border-top: none;
-}
-
-li:last-child {
- border-bottom: none;
-}
-</style>
-
-<ul>
-<li> List Item </li>
-<li> List Item </li>
-<li> List Item </li>
-</ul>
-效果如下：
-
-
-
+<p>ul &gt; li:last-child {<br> color: green;<br>}<br>比如下面一个例子，我们创建一个无序列表的样式，需要加上边框的深度，让层次更明显（分割线），又不想让第一个元素上边框和最后一个元素下边框有线条的感觉，这两个伪类就派上用场了，示例代码如下：<br> padding: 10px;<br> border-bottom: 1px solid black;<br> border-top: 1px solid #3c3c3c;</p>
 <p>浏览器兼容性</p>
 <p>IE9+</p>
 <p>Firefox</p>
@@ -299,24 +266,6 @@ div p:only-child {
 <p>Safari</p>
 <p>Opera</p>
 <p>29：X:only-of-type：匹配父元素里没有邻近兄弟元素的选择器<br>only-of-type会匹配父元素里没有邻近兄弟元素的子元素（即同胞中唯一的那种元素，没有兄弟）。例如，匹配所有只有一个列表元素的 li 和 div里只有一个p标签 让其应用样式，示例代码如下</p>
-<style>
-      div p:only-of-type {
-         color: red;
-}
-
-      li:only-of-type {
-         font-weight: bold;
-}
-</style>
-
-<div>
-<p> My paragraph here. </p>
-<ul>
-<li> List Item </li>
-<li> List Item </li>
-</ul>
-</div>
-
 <div>
 <p> Two paragraphs total. </p>
 <p> Two paragraphs total. </p>
@@ -335,20 +284,7 @@ div p:only-child {
 <p>Safari</p>
 <p>Opera</p>
 <p>30：X:first-of-type：选择该类型的第一个元素选择器<br>我们通常用这个选择器来选择该类型的第一个元素，为了更好的理解这个例子，我们来看如下结构的HTML代码：</p>
-<div>
-<p> My paragraph here. </p>
-<ul>
-<li> List Item 1 </li>
-<li> List Item 2 </li>
-</ul>
-
-<ul>
-<li> List Item 3 </li>
-<li> List Item 4 </li>
-</ul>   
-</div>
-比如我们有一个这样的需求? 怎么选中"List Item 2"。先别着急往下看？你会如何做呢？
-
+<p>比如我们有一个这样的需求? 怎么选中”List Item 2”。先别着急往下看？你会如何做呢？</p>
 <p>实现的方法比较多，如下所示：</p>
 <p>方案1</p>
 <p>ul:first-of-type &gt; li:nth-child(2) {<br> font-weight: bold;<br>}<br>上述代码，首先找到页面中的第一个无序列表，然后找到它的直接子元素，然后选择第二个元素。</p>
@@ -601,11 +537,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">作者：Aime-toi | 发布：2019.12.2 | 浏览：3890</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">html、CSS、网页设计</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">html、CSS、网页设计</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color2">作者：Aime-toi | 发布：2019.12.2 | 浏览：3890</a>
               </li>
             
             <div class="clearfix"></div>
